@@ -2,16 +2,7 @@
 include("functions.php");
 include("chat.inc.php");
 include("custom.php");
-
-$admin[] = "shaggi";
-
-$pubfnc[] = "pwd";
-
-$privfnc[] = "sh";
-$privfnc[] = "msg";
-
-$user = "user";
-$pass = "pass";
+include("config.php");
 
 login($user, $pass);
 
