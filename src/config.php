@@ -1,3 +1,5 @@
+<?php
+
 $admin[] = "em";
 $pubfnc = array("pwd");
 $privfnc = array("sh", "msg");
@@ -6,3 +8,5 @@ $privfnc = array("sh", "msg");
 
 $user = "leet";
 $pass = "dummypass";
+
+?>
