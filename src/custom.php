@@ -26,8 +26,12 @@ function ping($ip){
 	$result = array();
 
 	/* Execute Shell Command To Ping Target */
-	$cmd_result = shell_exec("ping -c 1 -w 1 ". $ip);
-
+	if((preg_match("/^([a-z\d](-*[a-z\d])*)(\.([a-z\d](-*[a-z\d])*))*$/i", $ip) && preg_match("/^.{1,253}$/", $ip) && preg_match("/^[^\.]{1,63}(\.[^\.]{1,63})*$/", $ip))) {
+		
+	$cmd_result = shell_exec("ping -c 1 -w 1 $ip");
+	} else {
+		return("Invalid domain/ip. ");
+	}
 	/* Get Results From Ping */
 	$result = explode(",",$cmd_result);
 
