@@ -47,7 +47,6 @@ function host($domain) {
 }
 
 function msg($cli) {
-    global $user;
     message($cli);
 }
 
