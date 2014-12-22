@@ -21,21 +21,30 @@ function whois($domain) {
         return ("Mofo, check yo domain and hit the ducking enter");		    }
 }
 
-function ping($domain) {
-    $domain = explode(" ",$domain,2);
-    $c = intval($domain[1]);
-    $domain = $domain[0];
-    if($c < 1){ 
-        $c = 1;
-    }
-    if($c > 10) {
-        message("Sory aboat that, but we can only allow 10 ping reqs. the number has to go down..");
-        $c=10;
-    }
-    if((preg_match("/^([a-z\d](-*[a-z\d])*)(\.([a-z\d](-*[a-z\d])*))*$/i", $domain) && preg_match("/^.{1,253}$/", $domain) && preg_match("/^[^\.]{1,63}(\.[^\.]{1,63})*$/", $domain))){
-    return (shell_exec("ping $domain -c $c"));
-    } else {
-        return ("Mofo, check yo domain and hit the ducking enter");		    }
+function ping($ip){
+
+	$result = array();
+
+	/* Execute Shell Command To Ping Target */
+	if((preg_match("/^([a-z\d](-*[a-z\d])*)(\.([a-z\d](-*[a-z\d])*))*$/i", $ip) && preg_match("/^.{1,253}$/", $ip) && preg_match("/^[^\.]{1,63}(\.[^\.]{1,63})*$/", $ip))) {
+		
+	$cmd_result = shell_exec("ping -c 1 -w 1 $ip");
+	} else {
+		return("Invalid domain/ip. ");
+	}
+	/* Get Results From Ping */
+	$result = explode(",",$cmd_result);
+
+	/* Return Server Status */
+	if(eregi("0 received", $result[1])){
+		return ("Target : [color=yellow][b]" . $ip . "[/b][/color] | Status : [color=red][b]OFFLINE[/b][/color]");
+	}
+	elseif(eregi("1 received", $result[1])){
+		return ("Target : [color=yellow][b]" . $ip . "[/b][/color] | Status : [color=lime][b]ONLINE[/b][/color]");
+	}
+	else{
+		return ("Target : [color=yellow][b]" . $ip . "[/b][/color] | Status : [color=yellow][b]UNREACHABLE(Does not exist!)[/b][/color]");
+	}
 }
 
 function host($domain) {
