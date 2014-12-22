@@ -24,11 +24,11 @@ function parse_child($post) {
     echo $user.":  ".$message."\n";
     $cli = explode(" ",$message,2);
     if(in_array($cli[0],$pubfnc)){
-      return @call_user_func($cli[0],$cli[1]);  
+      return @call_user_func($cli[0],$cli[1],$user);  
     }
 
     if(in_array($cli[0],$privfnc) && admin($user)){
-      return @call_user_func($cli[0],$cli[1]);
+      return @call_user_func($cli[0],$cli[1],$user);
     }
 }
 
