@@ -1,1 +1,0 @@
-screen -S bot php /var/www/bot/start.php
