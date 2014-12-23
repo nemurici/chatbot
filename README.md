@@ -6,6 +6,9 @@ Authors :
 - Shaggi
 - em
 - STiL
+- 
+
+About
 ========================
 
 Available commands :
