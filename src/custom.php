@@ -107,4 +107,19 @@ for ($i=0;$i<100000;$i++){
 }
 
 
+function short($url) {
+
+
+	$apiKey = "ed4298cd7be3d07919faf03410b194f6";
+
+	$uId = 8596635;
+
+	$result = short_url($url, $apiKey, $uId);
+
+
+ 
+    return ("Result: " . $result);
+}
+
+
 ?>
