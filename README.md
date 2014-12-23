@@ -16,6 +16,7 @@ Available commands :
 - b64_decode <string> - Decrypt in Base64 the string given
 - md5_encode <string> - Encrypt in Md5 the string given
 - sha1_encode <string> - Encrypt in Sha1 the string given
+- short <url> - Shorten an url into : adf.ly
 
 Coming soon :
 - IP Lookup  
