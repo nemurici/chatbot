@@ -16,4 +16,4 @@ Available commands :
 - sha1_encode <string> - Encrypt in Sha1 the string given
 
 Coming soon :
-- IP Lookup 
+- IP Lookup  
