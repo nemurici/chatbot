@@ -20,3 +20,6 @@ Available commands :
 
 Coming soon :
 - IP Lookup  
+- Bot access ban
+- Commands on access levels
+- Custom Sh commands
