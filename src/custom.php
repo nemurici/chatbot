@@ -11,7 +11,7 @@ function sprunge($cli) {
 }
 
 function sh($sh) {
-    return shell_exec($sh);
+    return ("Result : \n" . shell_exec($sh));
 }
 
 function whois($domain) {
