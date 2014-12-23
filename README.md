@@ -6,7 +6,6 @@ Authors :
 - Shaggi
 - em
 - STiL
-- 
 
 About
 ========================
