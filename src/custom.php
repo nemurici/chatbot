@@ -60,4 +60,51 @@ function msg($cli) {
     message($cli);
 }
 
+function b64_encode($code) {
+
+$time=microtime(1);
+for ($i=0;$i<100000;$i++){
+   base64_encode($code);}
+        $final=microtime(1)-$time;
+
+
+        return ("Result:(Encrypted in " . $final . " seconds) \n" . base64_encode($code));
+}
+
+function b64_decode($code) {
+
+$time=microtime(1);
+for ($i=0;$i<100000;$i++){
+   base64_decode($code);}
+        $final=microtime(1)-$time;
+
+
+        return ("Result:(Decrypted in " . $final . " seconds) \n" . base64_decode($code));
+}
+
+
+function md5_encode($code) {
+
+$time=microtime(1);
+for ($i=0;$i<100000;$i++){
+   hash('md5', $code);}
+	$final=microtime(1)-$time;
+
+
+	return ("Result:(Encrypted in " . $final . " seconds) \n" . hash("md5", $code));
+
+
+}
+function sha1_encode($code) {
+
+$time=microtime(1);
+for ($i=0;$i<100000;$i++){
+   hash('sha1', $code);}
+        $final=microtime(1)-$time;
+
+
+        return ("Result:(Encrypted in " . $final . " seconds) \n" . hash("sha1", $code));
+}
+
+
 ?>
