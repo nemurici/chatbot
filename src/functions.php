@@ -22,8 +22,6 @@ function parse_child($post) {
     $userid = gb("userID=\"","\"",$post);
     if(empty($message)){return false;}
     echo $user.":  ".$message."\n";
-    if($cli[0] != "!"){return false;}
-    $cli = str_replace("!","",$cli);
     $cli = explode(" ",$message,2);
     if(in_array($cli[0],$pubfnc)){
       return @call_user_func($cli[0],$cli[1],$user);  
