@@ -17,6 +17,7 @@ Available commands :
 - md5_encode <string> - Encrypt in Md5 the string given
 - sha1_encode <string> - Encrypt in Sha1 the string given
 - short <url> - Shorten an url into : adf.ly
+- passwd_generate <1/2/3> - Generates a password based on length and strength (1 - low , 2 - medium , 3 - hard)
 
 Coming soon :
 - IP Lookup  
