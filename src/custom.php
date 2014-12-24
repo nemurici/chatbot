@@ -122,5 +122,29 @@ function short($url) {
     return ("Result: " . $result);
 }
 
+function passwd_generate($var,$user) {
+        if ($var == "1")
+        {
+
+                $output = generateRandomString(10);
+
+                return ("/msg " . $user . " Result : " . $output);
+        }
+        elseif ( $var == "2")
+        {
+                $output = generateRandomString(15);
+                return ("/msg" . $user . " Result : " . $output);
+        }
+        elseif ($var == "3")
+        {
+                $output = generateRandomString(20);
+                return ("/msg " . $user . " Result : " . $output);
+        }
+        elseif (!$var)
+        {
+                return ("/msg " . $user . " Error! Usage : passwd_generate <1/2/3> ");
+        }
+}
+
 
 ?>
